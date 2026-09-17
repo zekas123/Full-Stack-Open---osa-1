@@ -1,0 +1,41 @@
+
+const Header = (props) =>{
+    return(
+      <h1>{props.course}</h1>
+    )
+  }
+
+
+const Content = (props) =>{
+  return (
+    <p>{props.courseName} <br></br>tehtavat: {props.tehtv}</p>
+  )
+}
+
+const Total = (props) =>{
+  return(
+    <p>Total: {props.tehtv1 + props.tehtv2 + props.tehtv3}</p>
+  )
+}
+
+const App = () => {
+
+  const course = 'Half Stack application development'
+  const courses = [
+    {courseName: 'Fundamentals of React', tehtv: 10 },
+    {courseName: 'Using props to pass data', tehtv: 7 },
+    {courseName: 'State of a component', tehtv: 14 }
+
+  ]
+  return (
+    <div>
+      <Header course={course} />
+      <Content courseName= {courses[0].courseName} tehtv = {courses[0].tehtv} />
+      <Content courseName= {courses[1].courseName} tehtv = {courses[1].tehtv} />
+      <Content courseName= {courses[2].courseName} tehtv = {courses[2].tehtv} />
+      <Total tehtv1 = {courses[0].tehtv} tehtv2= {courses[1].tehtv} tehtv3 = {courses[2].tehtv}/>
+    </div>
+  )
+}
+
+export default App
